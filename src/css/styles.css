@@ -341,6 +341,22 @@ footer p {
     font-weight: 600;
 }
 
+/* Resumen de orden interactivo */
+.order-summary {
+    background-color: #fef3c7;
+    border-left: 4px solid var(--accent);
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #78350f;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.order-summary.active {
+    display: block;
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -349,5 +365,8 @@ footer p {
     }
     .hero h1 {
         font-size: 2rem;
+    }
+    .menu-grid {
+        grid-template-columns: 1fr;
     }
 }
