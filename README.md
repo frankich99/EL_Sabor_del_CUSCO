@@ -43,8 +43,10 @@ el-sabor-del-cusco/
 │   └── .gitkeep
 └── src/                    # Código fuente de la aplicación web
     ├── index.html          # Landing page principal
-    └── css/
-        └── styles.css      # Estilos visuales amigables y responsivos
+    ├── css/
+    │   └── styles.css      # Estilos visuales amigables y responsivos
+    └── js/
+        └── app.js          # Lógica interactiva para cálculo y envío de pedidos
 ```
 
 ---
