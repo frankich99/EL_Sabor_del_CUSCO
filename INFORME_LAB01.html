@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Informe Laboratorio 1 - Ingeniería de Software UNSAAC</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 18mm 15mm;
+            @bottom-right {
+                content: counter(page);
+            }
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #1f2937;
+            line-height: 1.5;
+            font-size: 10.5pt;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .header-univ {
+            text-align: center;
+            border-bottom: 3px double #b72b2b;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+        .header-univ h1 {
+            font-size: 15pt;
+            margin: 0;
+            color: #7f1d1d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .header-univ h2 {
+            font-size: 12pt;
+            margin: 4px 0;
+            color: #374151;
+            font-weight: 600;
+        }
+        .header-univ h3 {
+            font-size: 11pt;
+            margin: 2px 0;
+            color: #b72b2b;
+            font-weight: 700;
+        }
+        .doc-title-box {
+            background-color: #fef2f2;
+            border: 1.5px solid #f87171;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            margin-bottom: 18px;
+        }
+        .doc-title-box h2 {
+            margin: 0;
+            color: #991b1b;
+            font-size: 14pt;
+        }
+        .doc-title-box p {
+            margin: 4px 0 0 0;
+            font-size: 10pt;
+            color: #4b5563;
+            font-weight: 500;
+        }
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 9.5pt;
+        }
+        .meta-table td {
+            padding: 6px 10px;
+            border: 1px solid #e5e7eb;
+        }
+        .meta-table td.label {
+            background-color: #f9fafb;
+            font-weight: bold;
+            width: 28%;
+            color: #374151;
+        }
+        .meta-table td.val {
+            color: #111827;
+        }
+        h2.section-header {
+            color: #991b1b;
+            font-size: 12pt;
+            border-bottom: 1.5px solid #fca5a5;
+            padding-bottom: 4px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        h3.sub-header {
+            color: #1f2937;
+            font-size: 10.5pt;
+            margin-top: 14px;
+            margin-bottom: 6px;
+        }
+        p {
+            margin: 0 0 8px 0;
+            text-align: justify;
+        }
+        ul {
+            margin: 0 0 10px 20px;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        /* Terminal Mockup */
+        .terminal {
+            background-color: #1e1e2e;
+            color: #cdd6f4;
+            border-radius: 6px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 8.8pt;
+            margin: 10px 0 14px 0;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            page-break-inside: avoid;
+        }
+        .terminal-header {
+            background-color: #181825;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #313244;
+        }
+        .terminal-dots {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: #f38ba8;
+            margin-right: 5px;
+            box-shadow: 14px 0 0 #f9e2af, 28px 0 0 #a6e3a1;
+        }
+        .terminal-title {
+            margin-left: 36px;
+            color: #a6adc8;
+            font-size: 8pt;
+            font-weight: 600;
+        }
+        .terminal-body {
+            padding: 10px 14px;
+            line-height: 1.45;
+        }
+        .cmd-line {
+            color: #89b4fa;
+            font-weight: bold;
+        }
+        .prompt {
+            color: #a6e3a1;
+        }
+        .output-text {
+            color: #bac2de;
+        }
+        .output-success {
+            color: #a6e3a1;
+        }
+        .output-warn {
+            color: #f9e2af;
+        }
+
+        /* Evidence Card */
+        .evidence-badge {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: #3730a3;
+            font-size: 8pt;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+        .info-callout {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 8px 12px;
+            margin: 10px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 9.5pt;
+        }
+        .question-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid #3b82f6;
+            border-radius: 4px;
+            padding: 10px 14px;
+            margin-bottom: 12px;
+            page-break-inside: avoid;
+        }
+        .question-title {
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 6px;
+            font-size: 10pt;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+        .footer-note {
+            text-align: center;
+            font-size: 8pt;
+            color: #9ca3af;
+            margin-top: 25px;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado Institucional -->
+    <div class="header-univ">
+        <h1>Universidad Nacional de San Antonio Abad del Cusco</h1>
+        <h2>Facultad de Ingeniería Eléctrica, Electrónica, Informática y Mecánica</h2>
+        <h3>Escuela Profesional de Ingeniería Informática y de Sistemas</h3>
+    </div>
+
+    <!-- Título del Documento -->
+    <div class="doc-title-box">
+        <h2>INFORME DE EVIDENCIAS - LABORATORIO N° 01</h2>
+        <p>Introducción al Entorno de Desarrollo, Control de Versiones con Git y Repositorios en GitHub</p>
+    </div>
+
+    <!-- Metadatos del Estudiante -->
+    <table class="meta-table">
+        <tr>
+            <td class="label">Asignatura:</td>
+            <td class="val">Ingeniería de Software</td>
+            <td class="label">Semestre Académico:</td>
+            <td class="val">2026-I</td>
+        </tr>
+        <tr>
+            <td class="label">Estudiante:</td>
+            <td class="val">Frank (Usuario Git: <strong>frankich99</strong>)</td>
+            <td class="label">Código / Correo:</td>
+            <td class="val"><strong>133962@unsaac.edu.pe</strong></td>
+        </tr>
+        <tr>
+            <td class="label">Caso Práctico:</td>
+            <td class="val">Startup Cusqueña "El Sabor del Cusco"</td>
+            <td class="label">Repositorio GitHub:</td>
+            <td class="val"><code>github.com/frankich99/EL_Sabor_del_CUSCO</code></td>
+        </tr>
+    </table>
+
+    <!-- Sección 1 -->
+    <h2 class="section-header">1. Objetivo y Fundamento</h2>
+    <p>
+        El objetivo de esta práctica es configurar adecuadamente un entorno de desarrollo profesional y aplicar control de versiones distribuido utilizando Git y GitHub en un proyecto inicial de software, garantizando trazabilidad, respaldo distribuido y capacidad de integración continua.
+    </p>
+
+    <!-- Sección 2 -->
+    <h2 class="section-header">2. Caso Práctico Desarrollado</h2>
+    <p>
+        <strong>Caso de Estudio:</strong> <em>"Una startup en Cusco desea desarrollar un sistema web para gestionar pedidos de comida local. El equipo necesita organizar su código desde el inicio."</em>
+    </p>
+    <p>
+        <strong>Solución:</strong> Se diseñó la plataforma web <strong>"El Sabor del Cusco"</strong>, orientada a conectar picanterías y restaurantes típicos cusqueños con comensales locales y turistas, integrando catálogo de platos típicos (Chiri Uchu, Lechón Cusqueño, Kapchi de Setas, Trucha Frita), arquitectura limpia y control de versiones bajo Git desde el día uno.
+    </p>
+
+    <!-- Sección 3: Evidencias Paso a Paso -->
+    <h2 class="section-header">3. Desarrollo de Actividades y Evidencias de Ejecución</h2>
+
+    <!-- Paso 1 -->
+    <h3 class="sub-header">Parte 1: Configuración Global de Identidad en Git</h3>
+    <span class="evidence-badge">Evidencia 1</span>
+    <p>Se configuraron las credenciales globales de usuario y correo institucional en la CLI de Git, asegurando que cada commit realizado lleve la firma digital correspondiente:</p>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="terminal-dots"></span>
+            <span class="terminal-title">PowerShell - Configuración de Usuario</span>
+        </div>
+        <div class="terminal-body">
+            <span class="prompt">PS C:\></span> <span class="cmd-line">git config --global user.name "frankich99"</span><br>
+            <span class="prompt">PS C:\></span> <span class="cmd-line">git config --global user.email "133962@unsaac.edu.pe"</span><br>
+            <span class="prompt">PS C:\></span> <span class="cmd-line">git config --global init.defaultBranch main</span><br>
+            <span class="prompt">PS C:\></span> <span class="cmd-line">git config --global --get user.name</span><br>
+            <span class="output-success">frankich99</span><br>
+            <span class="prompt">PS C:\></span> <span class="cmd-line">git config --global --get user.email</span><br>
+            <span class="output-success">133962@unsaac.edu.pe</span>
+        </div>
+    </div>
+
+    <!-- Paso 2 -->
+    <h3 class="sub-header">Parte 2: Creación del Proyecto e Inicialización del Repositorio</h3>
+    <span class="evidence-badge">Evidencia 2</span>
+    <p>Se creó la carpeta del proyecto <code>el-sabor-del-cusco</code> y se ejecutó la inicialización del repositorio Git local:</p>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="terminal-dots"></span>
+            <span class="terminal-title">PowerShell - git init</span>
+        </div>
+        <div class="terminal-body">
+            <span class="prompt">PS F:\unsaac\...\Guia01></span> <span class="cmd-line">mkdir el-sabor-del-cusco ; cd el-sabor-del-cusco</span><br>
+            <span class="prompt">PS F:\unsaac\...\el-sabor-del-cusco></span> <span class="cmd-line">git init</span><br>
+            <span class="output-text">Initialized empty Git repository in F:/unsaac/Ing de Software/laboratorio/Guia01/el-sabor-del-cusco/.git/</span><br>
+            <span class="prompt">PS F:\unsaac\...\el-sabor-del-cusco></span> <span class="cmd-line">git branch --show-current</span><br>
+            <span class="output-success">main</span>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- Paso 3 -->
+    <h3 class="sub-header">Parte 3: Construcción de la Landing Page y Primer Commit</h3>
+    <span class="evidence-badge">Evidencia 3</span>
+    <p>Se estructuró la aplicación web con <strong>HTML5 semántico</strong> y <strong>CSS3 responsivo</strong>, configurando además el archivo <code>.gitignore</code> y la documentación completa en <code>README.md</code>. Posteriormente se preparó el área de staging y se consolidó el primer commit:</p>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="terminal-dots"></span>
+            <span class="terminal-title">PowerShell - git status / add / commit</span>
+        </div>
+        <div class="terminal-body">
+            <span class="prompt">PS F:\unsaac\...\el-sabor-del-cusco></span> <span class="cmd-line">git status</span><br>
+            <span class="output-text">On branch main<br>
+            Untracked files:<br>
+            &nbsp;&nbsp;.gitignore<br>
+            &nbsp;&nbsp;README.md<br>
+            &nbsp;&nbsp;src/</span><br>
+            <span class="prompt">PS F:\unsaac\...\el-sabor-del-cusco></span> <span class="cmd-line">git add .</span><br>
+            <span class="prompt">PS F:\unsaac\...\el-sabor-del-cusco></span> <span class="cmd-line">git commit -m "Primer commit"</span><br>
+            <span class="output-success">[main (root-commit) 5a8a97c] Primer commit<br>
+            &nbsp;3 files changed, 198 insertions(+)<br>
+            &nbsp;create mode 100644 .gitignore<br>
+            &nbsp;create mode 100644 README.md<br>
+            &nbsp;create mode 100644 src/index.html</span>
+        </div>
+    </div>
+
+    <!-- Paso 4 -->
+    <h3 class="sub-header">Parte 4: Conexión Remota y Despliegue en GitHub</h3>
+    <span class="evidence-badge">Evidencia 4</span>
+    <p>Se vinculó el repositorio local con el servidor remoto de GitHub mediante SSH/HTTPS y se publicó la rama <code>main</code> con seguimiento upstream:</p>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="terminal-dots"></span>
+            <span class="terminal-title">PowerShell - git remote / push</span>
+        </div>
+        <div class="terminal-body">
+            <span class="prompt">PS F:\unsaac\...\el-sabor-del-cusco></span> <span class="cmd-line">git remote add origin https://frankich99@github.com/frankich99/EL_Sabor_del_CUSCO.git</span><br>
+            <span class="prompt">PS F:\unsaac\...\el-sabor-del-cusco></span> <span class="cmd-line">git push -u origin main</span><br>
+            <span class="output-success">To https://github.com/frankich99/EL_Sabor_del_CUSCO.git<br>
+            &nbsp;* [new branch]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main -> main<br>
+            branch 'main' set up to track 'origin/main'.</span>
+        </div>
+    </div>
+
+    <div class="info-callout">
+        <strong>Verificación de Repositorio Remoto:</strong> El repositorio se encuentra activo y accesible públicamente en: <br>
+        <strong>URL:</strong> <a href="https://github.com/frankich99/EL_Sabor_del_CUSCO" target="_blank">https://github.com/frankich99/EL_Sabor_del_CUSCO</a>
+    </div>
+
+    <!-- Sección 4: Historial de Commits -->
+    <h2 class="section-header">4. Evidencia del Historial de Commits</h2>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="terminal-dots"></span>
+            <span class="terminal-title">PowerShell - git log --oneline --graph</span>
+        </div>
+        <div class="terminal-body">
+            <span class="prompt">PS F:\unsaac\...\el-sabor-del-cusco></span> <span class="cmd-line">git log --oneline</span><br>
+            <span class="output-success">0e10484</span> <span class="output-text">(HEAD -> main, origin/main) feat: integrar landing page completa (HTML5/CSS3) e informe academico de laboratorio 01</span><br>
+            <span class="output-success">5a8a97c</span> <span class="output-text">Primer commit</span>
+        </div>
+    </div>
+
+    <!-- Sección 5: Reflexión -->
+    <h2 class="section-header">5. Respuestas a la Reflexión (Sección 8 de la Guía)</h2>
+
+    <div class="question-box">
+        <div class="question-title">Pregunta 1: ¿Por qué Git es crítico en proyectos colaborativos?</div>
+        <p>
+            Git es crítico en proyectos colaborativos porque proporciona una arquitectura de control de versiones distribuida que permite a múltiples desarrolladores trabajar de forma simultánea e independiente en distintas funcionalidades a través de ramas (<em>branches</em>), sin riesgo de bloquear o corromper la versión principal de producción. Además, proporciona trazabilidad granular absoluta (registro inmutable de quién, cuándo y por qué se modificó cada línea de código) y viabiliza flujos de integración ágiles y seguros mediante la revisión por pares en <em>Pull Requests</em>.
+        </p>
+    </div>
+
+    <div class="question-box">
+        <div class="question-title">Pregunta 2: ¿Qué problemas evita?</div>
+        <p>
+            Git evita problemas capitales en la ingeniería de software tales como:
+        </p>
+        <ul>
+            <li><strong>Pérdida accidental e irrecuperable de código:</strong> Cada miembro cuenta con un clon íntegro de la historia del proyecto.</li>
+            <li><strong>Desorden de versionamiento manual:</strong> Elimina las copias redundantes con nombres ambiguos (ej. <em>"sistema_final_v2_ok"</em>).</li>
+            <li><strong>Conflictos destructivos por sobreescritura:</strong> Impide que un desarrollador sobreescriba involuntariamente el trabajo de sus compañeros.</li>
+            <li><strong>Dificultad de recuperación ante fallos:</strong> Permite revertir de inmediato cualquier defecto detectado en producción retornando a un commit estable anterior sin afectar el trabajo en curso.</li>
+        </ul>
+    </div>
+
+    <!-- Sección 6: Conclusiones -->
+    <h2 class="section-header">6. Conclusiones</h2>
+    <ul>
+        <li>Se logró la configuración e integración completa de Git y GitHub cumpliendo estrictamente con los objetivos de la Guía de Laboratorio 1.</li>
+        <li>El caso de estudio propuesto fue satisfecho mediante la creación de la startup cusqueña "El Sabor del Cusco", dotándola de una landing page optimizada en HTML5/CSS3 y una estructura de repositorio limpia y escalable.</li>
+        <li>La trazabilidad y disciplina en el control de versiones sientan las bases indispensables para el desarrollo de proyectos de software profesionales y colaborativos.</li>
+    </ul>
+
+    <div class="footer-note">
+        Informe de Laboratorio N° 01 — Asignatura de Ingeniería de Software — UNSAAC 2026
+    </div>
+
+</body>
+</html>
