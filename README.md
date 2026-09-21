@@ -12,31 +12,39 @@ Conecta a restaurantes típicos, picanterías y emprendedores culinarios cusque�
 
 ---
 
+## 📑 Informe Académico de Laboratorio
+El informe completo del laboratorio con la resolución de todas las actividades, evidencias de terminal, reflexiones y conclusiones de ingeniería de software se encuentra disponible en:
+👉 **[INFORME_LAB01.md](INFORME_LAB01.md)**
+
+---
+
 ## 🚀 Características Principales
-- **Catálogo Gastronómico Local:** Visualización interactiva de platos típicos (Chiri Uchu, Lechón Cusqueño, Kapchi de Setas, Trucha frita, etc.).
-- **Gestión de Pedidos en Línea:** Carrito de compras intuitivo y confirmación de pedidos.
-- **Panel para Restaurantes:** Control y actualización del estado del pedido (Pendiente, En Preparación, En Camino, Entregado).
+- **Catálogo Gastronómico Local:** Visualización interactiva de platos típicos (Chiri Uchu, Lechón Cusqueño, Kapchi de Setas, Trucha frita, Choclo con Queso y Caldo de Gallina).
+- **Interfaz Limpia y Amigable:** Maquetada 100% en HTML5 semántico y CSS3 puro, completamente adaptable a dispositivos móviles.
+- **Formulario de Pedidos:** Sección de toma de órdenes amigable con cálculo de precios y datos de entrega en Cusco.
 - **Control de Versiones y Trazabilidad:** Código organizado y gestionado desde el inicio bajo buenas prácticas de Git y GitHub.
 
 ---
 
-## 🛠️ Tecnologías Previstas
+## 🛠️ Tecnologías Utilizadas
 - **Control de Versiones:** Git & GitHub
-- **Frontend:** HTML5, CSS3, JavaScript (React / Vanilla JS)
-- **Backend:** Node.js / Express o Python (FastAPI)
-- **Base de Datos:** PostgreSQL / MongoDB
+- **Frontend:** HTML5 Semántico, CSS3 Puro (Variables CSS, Flexbox, Grid)
+- **Documentación:** Markdown
 
 ---
 
 ## 📂 Estructura del Repositorio
 ```text
 el-sabor-del-cusco/
-├── README.md          # Documentación del proyecto y guía de inicio
-├── .gitignore         # Exclusión de archivos temporales y dependencias
-├── src/               # Código fuente del sistema
-│   ├── index.html     # Prototipo inicial / Landing page
-│   ├── css/           # Hojas de estilo
-│   └── js/            # Lógica y scripts
+├── README.md               # Documentación general del repositorio
+├── INFORME_LAB01.md        # Informe detallado de actividades y entregables
+├── .gitignore              # Exclusión de archivos temporales
+├── docs/                   # Directorio para capturas y evidencias
+│   └── .gitkeep
+└── src/                    # Código fuente de la aplicación web
+    ├── index.html          # Landing page principal
+    └── css/
+        └── styles.css      # Estilos visuales amigables y responsivos
 ```
 
 ---
@@ -45,21 +53,28 @@ el-sabor-del-cusco/
 
 ### Prerrequisitos
 - Tener instalado [Git](https://git-scm.com/) en el sistema operativo.
-- Navegador web moderno (Chrome, Edge, Firefox).
+- Cualquier navegador web moderno (Google Chrome, Edge, Firefox).
 
-### Clonar el repositorio
+### Clonar y Visualizar el Proyecto
 ```bash
-git clone https://github.com/frankich99/el-sabor-del-cusco.git
-cd el-sabor-del-cusco
+# Clonar el repositorio
+git clone https://github.com/frankich99/EL_Sabor_del_CUSCO.git
+
+# Entrar a la carpeta
+cd EL_Sabor_del_CUSCO
+
+# Abrir la landing page en el navegador (en Windows)
+start src/index.html
 ```
 
 ---
 
-## 👥 Datos del Desarrollador / Equipo
+## 👥 Datos del Desarrollador / Estudiante
 - **Institución:** Universidad Nacional de San Antonio Abad del Cusco (UNSAAC)
-- **Carrera:** Ingeniería Informática y de Sistemas
+- **Facultad:** Facultad de Ingeniería Eléctrica, Electrónica, Informática y Mecánica
+- **Escuela Profesional:** Ingeniería Informática y de Sistemas
 - **Curso:** Ingeniería de Software
-- **Autor / Usuario Git:** `frankich99`
+- **Autor / Usuario Git:** [`frankich99`](https://github.com/frankich99)
 - **Correo Institucional:** `133962@unsaac.edu.pe`
 
 ---
